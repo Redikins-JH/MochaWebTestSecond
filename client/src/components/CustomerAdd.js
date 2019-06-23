@@ -21,6 +21,15 @@ class CustomerAdd extends React.Component {
             .then((response) => {
                 console.log(response.data);        
             })
+        this.setState({
+            file: null,
+            userName: '',
+            birthday: '',
+            gender: '',
+            job: '',
+            fileName: ''
+        })    
+        window.location.reload();
     }
 
     handleFileChange = (e) => {
@@ -57,7 +66,7 @@ class CustomerAdd extends React.Component {
     render() {
         return(
             <form onSubmit={this.handleFormSubmit}>
-                <hi>고객추가</hi>
+                <h1>고객추가</h1>
                 프로필 이미지: <input type="file" name="file" file={this.state.file}  value={this.state.fileName} onChange={this.handleFileChange}/><br/>
                 이름: <input type="text" name="userName" value={this.state.userName} onChange={this.handleValueChange}/><br/>
                 생년월일: <input type="text" name="birthday" value={this.state.birthday} onChange={this.handleValueChange}/><br/>
