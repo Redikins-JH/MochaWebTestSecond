@@ -1,6 +1,6 @@
-## Management System
+## MOCHA WEB TEST
 
-Test version!!
+모카 클래스 웹 개발 테스트 중입니다~!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
