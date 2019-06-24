@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Customer from './components/Customer';
 import CustomerAdd from './components/CustomerAdd';
+import MainImage from './components/MainImage';
+import NavBar from './components/NavBar/NavBar';
 
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -46,6 +48,9 @@ const styles = theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+  },
+  navBar: {
+    marginBottom: 20,
   },
   tableHead: {
     fontSize: '1.0rem'
@@ -157,7 +162,7 @@ class App extends Component {
     const cellList = ["번호", "프로필 이미지", "이름", "생년월일", "성별", "직업", "설정"];
     return (
       <div className={classes.root}>
-          <AppBar position="static">
+          <AppBar position="static" color="primary">
           <Toolbar>
             <IconButton
               edge="start"
@@ -168,7 +173,7 @@ class App extends Component {
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
-              Mocha Class 고객 관리 시스템
+              Mocha Class
             </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
@@ -188,9 +193,12 @@ class App extends Component {
             </div>
           </Toolbar>
         </AppBar>
-        <div className={classes.menu}>
-          <CustomerAdd  stateRefresh={this.stateRefresh}/>      
+        
+        <MainImage />
+        <div className={classes.navBar}>
+           <NavBar />
         </div>
+           
         <Paper className={classes.paper}>
           <Table className={classes.table}>
             <TableHead>
@@ -212,6 +220,9 @@ class App extends Component {
             </TableBody>
           </Table>
         </Paper>
+        <div className={classes.menu}>
+          <CustomerAdd  stateRefresh={this.stateRefresh}/>      
+        </div>
       </div>
     )  
   }
