@@ -16,11 +16,11 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
+//import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
+//import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 
 
@@ -86,7 +86,7 @@ const styles = theme => ({
     justifyContent: 'center',
   },
   inputRoot: {
-    color: 'inherit',
+    color: 'secondary',
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 7),
@@ -164,20 +164,12 @@ class App extends Component {
       <div className={classes.root}>
           <AppBar position="static" color="primary">
           <Toolbar>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="Open drawer"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography className={classes.title} variant="h6" noWrap>
+            <Typography className={classes.title} color="secondary" variant="h6" noWrap>
               Mocha Class
             </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
-                <SearchIcon />
+                <SearchIcon color="secondary"/>
               </div>
               <InputBase
                 placeholder="검색하기"
@@ -185,7 +177,7 @@ class App extends Component {
                   root: classes.inputRoot,
                   input: classes.inputInput,
                 }}
-               // inputProps={{ 'aria-label': 'Search' }}
+                // inputProps={{ 'aria-label': 'Search' }}
                 name="searchKeyword"
                 value={this.state.searchKeyword}
                 onChange={this.handleValueChange}
